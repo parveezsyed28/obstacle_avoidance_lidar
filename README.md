@@ -1,53 +1,88 @@
-# Obstacle Avoidance Lidar
+Obstacle Avoidance LiDAR — ROS 2 Autonomous Navigation Project
 
-This ROS 2 package implements obstacle avoidance for a robot using LiDAR sensor data. It includes launch files, robot models, and Python nodes for autonomous navigation and obstacle detection in a Gazebo simulation.
+Welcome to the Obstacle Avoidance LiDAR ROS 2 package — a robotics project demonstrating autonomous obstacle detection and avoidance using LiDAR data within a Gazebo simulation environment.
 
-## Features
+🚀 Project Overview
 
-- Real-time LiDAR data processing
-- Velocity command publishing for obstacle avoidance
-- Launch files to start simulation and nodes
-- Robot description and models for Gazebo integration
+This project implements real-time obstacle avoidance for a differential-drive robot by processing LiDAR sensor inputs. It publishes velocity commands to navigate the robot safely around obstacles in a simulated environment using Gazebo, leveraging ROS 2 Humble’s ecosystem and Python nodes.
 
-## Package Structure
+
+🌟 Key Features
+
+    Real-time LiDAR sensor data processing for dynamic obstacle detection
+
+    Autonomous velocity command generation enabling smooth obstacle avoidance
+
+    Fully integrated with Gazebo simulation for realistic robot behavior testing
+
+    Modular and reusable ROS 2 Python nodes following best practices
+
+    Comprehensive launch files for quick startup and testing
+
+    Well-structured package including models, resources, and tests
+
+📂 Package Structure
 ```
 obstacle_avoidance_lidar/
-├── obstacle_avoidance/ # Python ROS 2 nodes
-├── launch/ # Launch files
-├── models/ # Gazebo models and meshes
-├── resource/ # Package resources
-├── test/ # Test scripts
-├── package.xml # Package metadata
-├── setup.py # Python build config
-├── setup.cfg # Python setup config
-└── README.md # This file
+├── obstacle_avoidance/      # Python ROS 2 nodes implementing navigation logic
+├── launch/                  # Launch files to start simulation and nodes
+├── models/                  # Gazebo robot models and meshes
+├── resource/                # Additional package resources
+├── test/                    # Unit and integration tests
+├── package.xml              # ROS 2 package metadata
+├── setup.py                 # Python build configuration
+├── setup.cfg                # Python package setup
+└── README.md                # Project documentation
 ```
 
-## Getting Started
+🔧 Prerequisites
 
-### Prerequisites
+    ROS 2 Humble
 
-- ROS 2 Humble
-- Gazebo simulator
-- Python 3
+    Gazebo Simulator (compatible with ROS 2 Humble)
 
-### Build and Run
+    Python 3.x
 
-1. Clone the repository into your ROS 2 workspace `src`:
-    ```bash
-   cd ~/ros2_ws/src
-   git clone https://github.com/parveezsyed28/obstacle_avoidance_lidar.git
-    ```   
-   
-2. Build the workspace
-    ```bash
-   cd ~/ros2_ws
-   colcon build
-   source install/setup.bash
-    ```   
+🛠️ Installation & Usage
 
-3. Launch the simulation
-   ```bash
-   ros2 launch obstacle_avoidance state_publisher.launch.py
-   ```   
+    Clone the repository inside your ROS 2 workspace src folder:
+```bash
+cd ~/ros2_ws/src
+git clone https://github.com/parveezsyed28/obstacle_avoidance_lidar.git
+```
+    Build the workspace and source the environment:
+    
+```bash
+cd ~/ros2_ws
+colcon build
+source install/setup.bash
+```
+
+    Launch the Gazebo simulation and the obstacle avoidance node:
+    
+```bash
+ros2 launch obstacle_avoidance state_publisher.launch.py
+```
+
+📈 How It Works
+
+    The LiDAR sensor data is published on a ROS 2 topic and continuously processed by a Python node.
+
+    The node analyzes scan data to detect obstacles in the robot’s path.
+
+    Based on obstacle proximity and position, velocity commands (/cmd_vel) are published to maneuver the robot safely.
+
+    The Gazebo simulation reflects the robot’s real-time movements as it autonomously avoids collisions.
+
+🎯 Learning Outcomes & Skills Demonstrated
+
+    Mastery of ROS 2 Python programming and node communication
+
+    Practical experience with sensor integration (LiDAR) in robotics
+
+    Familiarity with Gazebo simulation environment for testing robotics algorithms
+
+    Understanding of autonomous navigation and obstacle avoidance algorithms
+
+    Efficient workspace management and launch file configuration
 
