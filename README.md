@@ -10,7 +10,7 @@ This ROS 2 package implements obstacle avoidance for a robot using LiDAR sensor 
 - Robot description and models for Gazebo integration
 
 ## Package Structure
-
+```
 obstacle_avoidance_lidar/
 ├── obstacle_avoidance/ # Python ROS 2 nodes
 ├── launch/ # Launch files
@@ -21,7 +21,7 @@ obstacle_avoidance_lidar/
 ├── setup.py # Python build config
 ├── setup.cfg # Python setup config
 └── README.md # This file
-
+```
 
 ## Getting Started
 
